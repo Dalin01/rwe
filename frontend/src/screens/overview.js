@@ -7,15 +7,14 @@ const Overview = () => {
   const [overview, setOverview] = useState([]);
 
   useEffect(() => {
-    
-    
-    async function requestData () {
-      const response = await fetch(url);
-      const data = await response.json();
-      setOverview(data);
-    }
+    requestData();
   }, []);
 
+  async function requestData () {
+    const response = await fetch(url);
+    const data = await response.json();
+    setOverview(data);
+  }
 
   return (
     <div>
