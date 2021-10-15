@@ -5,9 +5,9 @@ const site = [
     "name": "site 1",
     "speed": 8.5,
     "temperature": 20,
-    "active power": 5.5,
-    "percentage active": 20,
-    "turbine event": "NC"
+    "power": 5.5,
+    "percentage": 20,
+    "event": "NC"
   }
 ]
 

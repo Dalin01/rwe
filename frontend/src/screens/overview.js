@@ -1,24 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import Event from "../components/Event"
+import './index.css'
 
-const url = 'http://localhost:5000/site';
+const Overview = ({ item }) => { 
 
-const Overview = () => {
-
-  const [overview, setOverview] = useState([]);
-
-  useEffect(() => {
-    requestData();
-  }, []);
-
-  async function requestData () {
-    const response = await fetch(url);
-    const data = await response.json();
-    setOverview(data);
-  }
+  const events = [
+    {
+      "name" : "ST",
+      "color" : "red"
+    }
+  ];
 
   return (
-    <div>
-      
+    <div className='container'>
+      <div >
+        <p>{ item.name }</p> 
+        <p>{ item.speed }</p> 
+        <p>{ item.temperature }</p> 
+        <p>{ item.power }</p> 
+      </div>
+      <div> 
+        {
+          
+          events.forEach((value) => {
+            return <Event color= {value.color} eventName={value.name} eventValue={item.event}/>
+          })
+        }
+
+      </div>
     </div>
   )
 }
