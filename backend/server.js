@@ -9,7 +9,7 @@ const start = (port) => {
   app.use(cors());
   app.use(router);
   return app.listen(port, () => {
-    console.log(`Started server on the port ${port}`);
+    console.log(`SERVER RUNNING ON http://localhost:${port}`);
   });
 };
 
